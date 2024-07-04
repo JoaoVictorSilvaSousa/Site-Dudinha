@@ -1,24 +1,60 @@
 #envelope {
-  margin: 0 auto;  /* Ajusta a margem para centralizar horizontalmente */
+  margin: 150px;
   position: relative;
   width: 280px;
   height: 180px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  top: 150px;  /* Ajusta a posição do envelope */
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
   background-color: #f9c5c8;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
 div {
   text-align: center;
 }
 
 h1 {
   font-family: Arial, sans-serif;
-  color: rgb(248, 0, 0);
-  font-size: 4em;  /* Ajuste o tamanho da fonte conforme necessário */
-  margin-top: 50px;  /* Ajuste este valor conforme necessário para descer o H1 */
+  color: rgb(235, 132, 132);
+  font-size: 4em;
+  margin-top: 50px;
+}
+
+#paper {
+  position: absolute;
+  top: 20%;
+  left: 43.3%;
+  /* Adjust width and height as needed */
+  width: 250px;
+  height: 400px;
+  transform: translate(-50%, -50%); /* Center the paper within the envelope */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+#paper.visible {
+  opacity: 1;
+}
+
+#paper p {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+#paper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
 }
 
 .front {
@@ -157,7 +193,7 @@ h1 {
 .close .heart {
   opacity: 0;
   -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 
 .a1 {
@@ -166,10 +202,11 @@ h1 {
   opacity: 1;
   -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
   -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .a2 {
@@ -178,10 +215,11 @@ h1 {
   opacity: 1;
   -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
   -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 .a3 {
@@ -190,10 +228,11 @@ h1 {
   opacity: 1;
   -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
   -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
   -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 
 @-webkit-keyframes slideUp {

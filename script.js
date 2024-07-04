@@ -1,26 +1,27 @@
-$( document ).ready(function() {
-    
+$(document).ready(function() {
     var envelope = $('#envelope');
     var btn_open = $("#open");
     var btn_reset = $("#reset");
-    
-    envelope.click( function() {
-        open();
+    var paper = $("#paper");
+  
+    envelope.on('click touchstart', function() {
+      openEnvelope();
     });
-    btn_open.click( function() {
-        open();
+    btn_open.on('click touchstart', function() {
+      openEnvelope();
     });
-    btn_reset.click( function() {
-        close();
+    btn_reset.on('click touchstart', function() {
+      closeEnvelope();
     });
-
-    function open() {
-        envelope.addClass("open")
-           .removeClass("close");
+  
+    function openEnvelope() {
+      envelope.addClass("open").removeClass("close");
+      /* No need for setTimeout here */
+      paper.removeClass("hidden").addClass("visible");
     }
-    function close() {
-        envelope.addClass("close")
-           .removeClass("open");
+  
+    function closeEnvelope() {
+      envelope.addClass("close").removeClass("open");
+      paper.removeClass("visible").addClass("hidden");
     }
-   
-});
+  });
